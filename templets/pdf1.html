@@ -1,0 +1,113 @@
+<html>
+<title>welcome</title>
+<style>
+body{
+    background-color:lightblue;
+    }
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+input[type=text],select {
+  width: 100%;
+  padding: 5px 5px;
+  margin: 8px 0;
+  display:inline-block;
+  border:1px solid #ccc;
+  border-radius:4px;
+  box-sizing: border-box;
+}
+h1{
+    color:BLACK;
+    text-align:center
+}
+h3{
+    color:BLACK;
+    text-align:center
+}
+.table {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 5px;
+            background-color: #fff;
+        }
+
+        .table th,
+        .table td {
+            padding: 5px;
+            vertical-align: top;
+            border-top: 1px solid #000;
+            text-align: center;
+        }
+
+        .table thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #000;
+        }
+
+        .table tbody + tbody {
+            border-top: 2px solid #000;
+        }
+
+        .table .table {
+            background-color: #fff;
+        }
+
+</style>
+<body>
+<h1>Bandi kistaiah kiranam</h1>
+<h2><table><td><h2>Customer Name:{{name}}</h2></table></h2>
+
+
+<table class='table'>
+<tr>
+
+<th>
+      <h3 >Item</h3> 
+        </th>
+        <th>
+        <h3 >Quantity</h3> 
+        </th>
+        <th>
+        <h3 >Rate</h3> 
+        </th>
+         
+</tr>
+{% for i in del %}
+<tr>
+
+<td>
+{{i.itemname}}
+</td>
+<td>
+{{i.quantity}}
+</td>
+<td>
+{{i.rate}}
+</td>
+</tr>
+{%endfor%}
+<td>
+<h2>Total</h2>
+</td>
+
+<td>
+<h2>Items:{{count}}</h2>
+</td>
+<td>
+<h2>Rs.{{total}}</h2>
+</td>
+</table>
+<table>
+
+</body>
+</html>
+

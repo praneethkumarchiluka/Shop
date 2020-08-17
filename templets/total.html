@@ -1,0 +1,100 @@
+<html>
+<title>welcome</title>
+<style>
+body{
+    background-color:lightblue;
+    }
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+input[type=text],select {
+  width: 100%;
+  padding: 5px 5px;
+  margin: 8px 0;
+  display:inline-block;
+  border:1px solid #ccc;
+  border-radius:4px;
+  box-sizing: border-box;
+}
+h1{
+    color:BLACK;
+    text-align:center
+}
+h3{
+    color:BLACK;
+    text-align:center
+}
+
+</style>
+<body>
+
+<h1>Welcome Bandi kistaiah kiranam</h1>
+<form action="/render/pdf/" >
+ {% csrf_token %}
+<table><td><h2>Customer Name:<td><input type="text" name="fname" ></td></h2>
+
+
+ <td>
+          <button name="pdf" class="button">Download</button>
+          </td>
+          </table>
+</form>
+<table>
+<tr>
+
+<th>
+      <h3 >Item</h3> 
+        </th>
+        <th>
+        <h3 >Quantity</h3> 
+        </th>
+        <th>
+        <h3 >Rate</h3> 
+        </th>
+         
+</tr>
+{% for i in del %}
+<tr>
+{% csrf_token %}
+<td>
+<input type="text" name="item" value="{{i.itemname}}" disabled>
+</td>
+<td>
+<input type="text" name="quantity" value="{{i.quantity}}" disabled>
+</td>
+<td>
+<input type="text" name="rate" value="{{i.rate}}" disabled>
+</td>
+<td>
+<a href="/delete/{{i.id }}">Delete</a>
+</td>
+</tr>
+{%endfor%}
+<td>
+<h2>Total</h2>
+</td>
+<td>
+<h2>{{count}}</h2>
+</td>
+<td>
+<h2>{{total}}</h2>
+</td>
+</table>
+<table>
+
+<td>
+          <a class="btn btn-info" href="{% url "keeper:home" %}" type="button" ">Home</a>
+</td>
+</table>
+</body>
+</html>
+

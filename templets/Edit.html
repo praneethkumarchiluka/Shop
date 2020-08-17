@@ -1,0 +1,88 @@
+<html>
+<title>welcome</title>
+<style>
+body{
+    background-color:lightblue;
+    }
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+input[type=text],select {
+  width: 100%;
+  padding: 5px 5px;
+  margin: 8px 0;
+  display:inline-block;
+  border:1px solid #ccc;
+  border-radius:4px;
+  box-sizing: border-box;
+}
+h1{
+    color:BLACK;
+    text-align:center
+}
+h3{
+    color:BLACK;
+    text-align:center
+}
+
+</style>
+<body>
+<h1>Welcome Bandi kistaiah kiranam</h1>
+<form action=" " method="POST">
+{% csrf_token %}
+<table>
+<tr>
+<th>
+      <h3 >Item Number</h3> 
+        </th>
+<th>
+      <h3 >Item</h3> 
+        </th>
+        <th>
+        <h3 >Quantity</h3> 
+        </th>
+        <th>
+        <h3 >Rate</h3> 
+        </th>
+         
+</tr>
+
+<tr>
+<td>
+<input type="text" name="id" value="{{del.id}}" >
+</td>
+<td>
+
+<select name="item" value="{{del.itemname}}">
+          <option></option>
+          <option>Peserpappu</option>
+          <option>Thogarpappu</option>
+          <option>Shenigapappu</option>
+          </select>
+</td>
+<td>
+<input type="text" name="quantity" value="{{del.quantity}}" >
+</td>
+<td>
+<input type="text" name="rate" value="{{del.rate}}">
+</td>
+<td>
+<button>Edit</button>
+</td>
+
+</tr>
+
+</table>
+</form>
+</body>
+</html>
+
